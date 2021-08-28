@@ -1,6 +1,21 @@
+@import "~@carbon/themes/scss/themes";
+
+// Use the gray 100 theme
+$carbon--theme: $carbon--theme--g100;
+@include carbon--theme();
+
+@import "~@carbon/type/scss/type";
+@include carbon--type-reset();
+
 @import "~@carbon/type/scss/font-face/mono";
 @import "~@carbon/type/scss/font-face/sans";
 @include carbon--font-face-mono();
 @include carbon--font-face-sans();
 
 @import "~@carbon/ibmdotcom-styles/scss/components/dotcom-shell/dotcom-shell";
+
+@import "~carbon-components/scss/globals/scss/styles.scss";
+
+.bx--header__logo > a > svg > path {
+  fill: #fff !important;
+}

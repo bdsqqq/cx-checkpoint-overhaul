@@ -98,6 +98,9 @@ export default class CarbonForIBMDotcom extends App {
           mastheadProps={{
             navigation: "default",
           }}
+          footerProps={{
+            type: "short",
+          }}
         >
           <Component {...pageProps} />
         </DotcomShell>

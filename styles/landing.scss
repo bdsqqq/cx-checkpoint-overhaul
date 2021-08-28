@@ -1,14 +1,31 @@
-@import "~@carbon/ibmdotcom-styles/scss/components/content-block-media/index";
-@import "~@carbon/ibmdotcom-styles/scss/components/content-block-mixed/index";
-@import "~@carbon/ibmdotcom-styles/scss/components/content-block-segmented/index";
-@import "~@carbon/ibmdotcom-styles/scss/components/content-block-simple/index";
-@import "~@carbon/ibmdotcom-styles/scss/components/card-section-images/card-section-images";
-@import "~@carbon/ibmdotcom-styles/scss/components/card-section-simple/card-section-simple";
-@import "~@carbon/ibmdotcom-styles/scss/components/tableofcontents/index";
-@import "~@carbon/ibmdotcom-styles/scss/components/link-list/index";
-@import "~@carbon/ibmdotcom-styles/scss/components/layout/layout";
-@import "~@carbon/ibmdotcom-styles/scss/components/leadspace/leadspace";
+@import "@carbon/type/scss/styles";
 
-.bx--content-section:not(:last-child) {
-  padding-bottom: 48px;
+.page-wrapper {
+  padding-top: 64px; // $spacing-10
+}
+
+.header {
+  font-size: 48px;
+  line-height: 1.125em;
+  font-weight: 300;
+  letter-spacing: 0px;
+}
+
+.copy-wrapper {
+  display: flex;
+  width: 50%;
+  margin-top: 24px;
+
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subhead {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.hero-text {
+  display: block;
+  font-size: 92px;
 }
