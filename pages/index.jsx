@@ -3,7 +3,9 @@ import {} from "@carbon/ibmdotcom-react";
 import { Dropdown, Button } from "carbon-components-react";
 import { ArrowRight24 } from "@carbon/icons-react";
 
+import { useRouter } from "next/router";
 import { useState } from "react";
+
 const items = [
   {
     id: "option-1",
@@ -22,6 +24,7 @@ const items = [
  */
 const Home = () => {
   const [currentIndustry, setCurrentIndustry] = useState(undefined);
+  const router = useRouter();
 
   return (
     <>
@@ -51,8 +54,11 @@ const Home = () => {
                     //Button will be disabled while currentIndustry isn't chosen.
                     disabled={typeof currentIndustry == "undefined"}
                     renderIcon={ArrowRight24}
-                    //TODO, redirect to questions page, take the currentIndustry with you
-                    onClick={(e) => console.log(e)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      // We might want to push this to a global state or something like that besides storing it in the URL. keeping this in the URL is usefull because it allows the user to refresh the page and send it to someone.
+                      router.push(`questions?${currentIndustry.id}`);
+                    }}
                   >
                     Start your CX checkpoint
                   </Button>
