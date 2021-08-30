@@ -14,6 +14,8 @@ $carbon--theme: $carbon--theme--g100;
 
 @import "~@carbon/ibmdotcom-styles/scss/components/dotcom-shell/dotcom-shell";
 
+@import "~@carbon/charts/styles.css";
+
 @import "~carbon-components/scss/globals/scss/styles.scss";
 
 .bx--header__logo > a > svg > path {
