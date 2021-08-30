@@ -57,7 +57,7 @@ const Home = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       // We might want to push this to a global state or something like that besides storing it in the URL. keeping this in the URL is usefull because it allows the user to refresh the page and send it to someone.
-                      router.push(`questions?${currentIndustry.id}`);
+                      router.push(`questions?ind=${currentIndustry.id}`);
                     }}
                   >
                     Start your CX checkpoint
