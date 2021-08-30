@@ -1,5 +1,10 @@
-import "../styles/results.scss";
-import { Link32, LogoLinkedin32, LogoTwitter32 } from "@carbon/icons-react";
+import "../styles/results.module.scss";
+import {
+  ArrowRight24,
+  Link32,
+  LogoLinkedin32,
+  LogoTwitter32,
+} from "@carbon/icons-react";
 
 import { Button } from "carbon-components-react";
 import { GroupedBarChart } from "@carbon/charts-react";
@@ -127,64 +132,92 @@ const Questions = () => {
                   Results
                 </h1>
                 <div className="copy-wrapper">
+                  <h2
+                    style={{ fontSize: "14px", color: "#f3f3f3" }}
+                    className="subhead"
+                  >
+                    We can change this text based on the answers from the user
+                    and tell them how they compare with their industry, we also
+                    have this fancy graph on the right.
+                  </h2>
+                  <br />
                   <h2 className="subhead">
-                    Learn where your business is already winning on customer
-                    experience (CX), and discover your biggest areas of
-                    opportunity with this six question assessment.
+                    <strong>IBM something™</strong> can help you do
+                    <strong> something™</strong>
                   </h2>
 
-                  <h2>Share your results</h2>
-                  {/* Someone with good answers might not need our help, but they will wanna brag about it. Using their shares to drive traffic to this asset we can increase our chances of finding someone who needs our products */}
-                  <div className="button-group">
-                    <Button
-                      kind="primary"
-                      hasIconOnly
-                      renderIcon={LogoLinkedin32}
-                      tooltipPosition="bottom"
-                      tooltipAlignment="start"
-                      type="button"
-                      iconDescription="Share on Linkedin"
-                    />
-
-                    <Button
-                      kind="primary"
-                      hasIconOnly
-                      renderIcon={LogoTwitter32}
-                      tooltipPosition="bottom"
-                      type="button"
-                      iconDescription="Share on Twitter"
-                    />
-
-                    <Button
-                      kind="primary"
-                      hasIconOnly
-                      renderIcon={Link32}
-                      tooltipPosition="bottom"
-                      type="button"
-                      iconDescription="Copy a shareable link"
-                      tooltipAlignment="end"
-                    />
-                  </div>
+                  <Button renderIcon={ArrowRight24}>
+                    Start by speaking with an expert
+                  </Button>
                 </div>
               </section>
               <section className="bx--col-md-4">
+                <p style={{ fontSize: "14px", color: "#f3f3f3" }}>
+                  I din't know how to make the graph dark themed and didn't find
+                  out reading the docs, I can ask someone later.
+                </p>
                 <GroupedBarChart data={data} options={options} />
               </section>
 
               <section className="bx--col-md-2">
                 <h1>useful links</h1>
                 {/* We can customize which links we should show someone based on their answers */}
+                <p style={{ fontSize: "14px", color: "#f3f3f3" }}>
+                  We can customize which links we should show someone based on
+                  their answers
+                </p>
                 <ul>
                   <li>
-                    <a href="#a">Link</a>
+                    <a href="#a">Lorem ipsum dolor sit.</a>
                   </li>
                   <li>
-                    <a href="#a">Link</a>
+                    <a href="#a">Lorem ipsum dolor sit.</a>
                   </li>
                   <li>
-                    <a href="#a">Link</a>
+                    <a href="#a">Lorem ipsum dolor sit.</a>
                   </li>
                 </ul>
+
+                <h2 style={{ marginTop: "96px" }}>Share your results</h2>
+                <br />
+                <p style={{ fontSize: "14px", color: "#f3f3f3" }}>
+                  Someone with good answers might not need our help, but they
+                  will wanna brag about it. Using their shares to drive traffic
+                  to this asset we can increase our chances of finding someone
+                  who needs our products.
+                </p>
+                <br />
+                {/* Someone with good answers might not need our help, but they will wanna brag about it. Using their shares to drive traffic to this asset we can increase our chances of finding someone who needs our products */}
+                <div className="button-group">
+                  <Button
+                    kind="secondary"
+                    hasIconOnly
+                    renderIcon={LogoLinkedin32}
+                    tooltipPosition="bottom"
+                    tooltipAlignment="start"
+                    type="button"
+                    iconDescription="Share on Linkedin"
+                  />
+
+                  <Button
+                    kind="secondary"
+                    hasIconOnly
+                    renderIcon={LogoTwitter32}
+                    tooltipPosition="bottom"
+                    type="button"
+                    iconDescription="Share on Twitter"
+                  />
+
+                  <Button
+                    kind="secondary"
+                    hasIconOnly
+                    renderIcon={Link32}
+                    tooltipPosition="bottom"
+                    type="button"
+                    iconDescription="Copy a shareable link"
+                    tooltipAlignment="end"
+                  />
+                </div>
               </section>
             </div>
           </div>
