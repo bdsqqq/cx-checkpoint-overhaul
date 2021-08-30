@@ -21,18 +21,25 @@ const Questions = () => {
     console.log("answers are: ", answers);
   }, [answers]);
 
+  const handleNextPage = useCallback(
+    (answers) => {
+      router.push(`results?ind=${router.query.id}&ans=${answers.join("-")}`);
+    },
+    [router]
+  );
+
   const handleNextQuestion = useCallback(
-    (currentQuestion, answer) => {
+    async (currentQuestion, answer) => {
       setAnswers((prevAnswers) => [...prevAnswers, answer]);
       setCurrentAnswer(undefined);
 
-      if (currentQuestion <= 6) {
+      if (currentQuestion < 6) {
         setCurrentQuestion(currentQuestion + 1);
       } else {
-        router.push(`results?ind=${router.query.ind}&ans=${answers.join("-")}`);
+        handleNextPage(answers);
       }
     },
-    [router, answers]
+    [answers, handleNextPage]
   );
 
   const handleSelect = useCallback((newValue) => {
