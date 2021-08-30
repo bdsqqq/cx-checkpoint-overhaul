@@ -24,8 +24,9 @@ const Questions = () => {
   const handleNextQuestion = useCallback(
     (currentQuestion, answer) => {
       setAnswers((prevAnswers) => [...prevAnswers, answer]);
+      setCurrentAnswer(undefined);
 
-      if (currentQuestion < 6) {
+      if (currentQuestion <= 6) {
         setCurrentQuestion(currentQuestion + 1);
       } else {
         router.push(`results?ind=${router.query.ind}&ans=${answers.join("-")}`);
@@ -33,6 +34,10 @@ const Questions = () => {
     },
     [router, answers]
   );
+
+  const handleSelect = useCallback((newValue) => {
+    setCurrentAnswer(newValue);
+  }, []);
 
   return (
     <>
@@ -52,8 +57,10 @@ const Questions = () => {
                   </h2>
 
                   <RadioButtonGroup
+                    name="answers"
                     orientation="vertical"
-                    onChange={(e) => setCurrentAnswer(e)}
+                    onChange={(e) => handleSelect(e)}
+                    valueSelected={currentAnswer}
                   >
                     <RadioButton
                       id="radio-1"
