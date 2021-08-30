@@ -25,10 +25,12 @@
     "update-latest": "yarn upgrade @carbon/ibmdotcom-react@latest && yarn upgrade @carbon/ibmdotcom-styles@latest"
   },
   "dependencies": {
+    "@carbon/charts-react": "^0.45.1",
     "@carbon/ibmdotcom-react": "^1.23.2",
     "@carbon/ibmdotcom-styles": "^1.23.0",
     "@carbon/icons-react": "^10.9.1",
-    "@carbon/pictograms-react": "^10.9.0"
+    "@carbon/pictograms-react": "^10.9.0",
+    "d3": "^7.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
